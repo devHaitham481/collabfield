@@ -107,6 +107,8 @@ GEM
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
+    faker (2.17.0)
+      i18n (>= 1.6, < 2)
     ferrum (0.11)
       addressable (~> 2.5)
       cliver (~> 0.3)
@@ -265,6 +267,7 @@ DEPENDENCIES
   database_cleaner
   devise (~> 4.7)
   factory_bot_rails
+  faker (~> 2.17)
   headless
   jbuilder (~> 2.7)
   jquery-rails (~> 4.4)
