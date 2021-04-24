@@ -67,7 +67,7 @@ RSpec.configure do |config|
   
 
   config.include Devise::Test::IntegrationHelpers, type: :feature
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   Capybara.javascript_driver = :poltergeist
   Capybara.server = :puma
   # You can uncomment this line to turn off ActiveRecord support entirely.
