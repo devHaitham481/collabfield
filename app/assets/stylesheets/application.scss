@@ -12,10 +12,9 @@
  *
  */
 @import "bootstrap/scss/bootstrap";
-@import "responsive/desktop.scss";
-@import "responsive/mobile.scss";
 @import "base/variables";
 @import "base/default";
 @import "partials/signup.scss";
 @import "partials/layout/navigation.scss";
-
+@import "responsive/desktop.scss";
+@import "responsive/mobile.scss";
