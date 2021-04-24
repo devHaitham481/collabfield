@@ -7,8 +7,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 # Add additional requires below this line. Rails is not loaded until this point!
 
 require 'rspec/rails'
-require 'capybara/poltergeist'
-require 'factory_girl_rails'
+require 'capybara/cuprite'
+require 'factory_bot_rails'
 require 'capybara/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -68,7 +68,10 @@ RSpec.configure do |config|
 
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include FactoryBot::Syntax::Methods
-  Capybara.javascript_driver = :poltergeist
+  Capybara.javascript_driver = :cuprite
+  Capybara.register_driver(:cuprite) do |app| 
+    Capybara::Cuprite::Driver.new(app, window_size: [1200, 800])
+  end
   Capybara.server = :puma
   # You can uncomment this line to turn off ActiveRecord support entirely.
   #
@@ -88,9 +91,8 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-  config.raise_errors_for_deprecations!
   # Filter lines from Rails gems in backtraces.
-  config.filter_rails_from_backtrace!
+  #config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
